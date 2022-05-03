@@ -13,7 +13,7 @@ const Home = ({products, bannerData}) => {
 
             <div className='products-container'>
                 {products?.map((product) =>
-                    product.name
+                    <Product key={product.id} product={product}/>
                 )}
             </div>
 
