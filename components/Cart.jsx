@@ -8,7 +8,7 @@ import {urlFor} from "../lib/client";
 
 const Cart = () => {
     const cartRef = useRef();
-    const {qty, totalPrice, totalQuantities, cartItems, setShowCart} = useStateContext();
+    const {totalPrice, totalQuantities, cartItems, setShowCart} = useStateContext();
 
     return (
         <div className='cart-wrapper' ref={cartRef}>
@@ -58,7 +58,7 @@ const Cart = () => {
                                     <div>
                                         <p className='quantity-desc'>
                                             <span onClick='' className='minus'><AiOutlineMinus/></span>
-                                            <span className='num'> {qty} </span>
+                                            <span className='num'> 0 </span>
                                             <span onClick='' className='plus'><AiOutlinePlus/></span>
                                         </p>
                                     </div>
@@ -79,6 +79,15 @@ const Cart = () => {
                         <div className='total'>
                             <h3> Subtotal: </h3>
                             <h3>${totalPrice}</h3>
+                        </div>
+                        <div className='btn-container'>
+                            <button
+                                type='button'
+                                className='btn'
+                                onClick=''
+                            >
+                                Pay with Stripe
+                            </button>
                         </div>
                     </div>
                 )}
