@@ -8,7 +8,7 @@ import {urlFor} from "../lib/client";
 
 const Cart = () => {
     const cartRef = useRef();
-    const {totalPrice, totalQuantities, cartItems, setShowCart} = useStateContext();
+    const {totalPrice, onRemove, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity} = useStateContext();
 
     return (
         <div className='cart-wrapper' ref={cartRef}>
@@ -57,15 +57,25 @@ const Cart = () => {
                                 <div className='flex bottom'>
                                     <div>
                                         <p className='quantity-desc'>
-                                            <span onClick='' className='minus'><AiOutlineMinus/></span>
-                                            <span className='num'> 0 </span>
-                                            <span onClick='' className='plus'><AiOutlinePlus/></span>
+                                            <span
+                                                onClick={() => toggleCartItemQuantity(item._id, 'dec')}
+                                                className='minus'
+                                            >
+                                                <AiOutlineMinus/>
+                                            </span>
+                                            <span className='num'> {item.quantity} </span>
+                                            <span
+                                                onClick={() => toggleCartItemQuantity(item._id, 'inc')}
+                                                className='plus'
+                                            >
+                                                <AiOutlinePlus/>
+                                            </span>
                                         </p>
                                     </div>
                                     <button
                                         type='button'
                                         className='remove-item'
-                                        onClick=''
+                                        onClick={() => onRemove(item)}
                                     >
                                         <TiDeleteOutline/>
                                     </button>
