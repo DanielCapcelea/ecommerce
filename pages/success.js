@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
 import {BsBagCheckFill} from "react-icons/bs";
-import {useRouter} from "next/router";
 import {useStateContext} from "../stateContext/StateContext";
+import {runConfetti} from "../lib/utils";
 
 const Success = () => {
     const {setCartItems, setTotalPrice, setTotalQuantities} = useStateContext();
@@ -12,6 +12,7 @@ const Success = () => {
         setCartItems([]);
         setTotalPrice(0);
         setTotalQuantities(0);
+        runConfetti();
     }, []);
 
 
