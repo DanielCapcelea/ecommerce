@@ -31,16 +31,21 @@ a {
 }
 
 .layout {
-    padding: 15px;
+    padding: 0 15px;
     max-width: 1800px;
     margin: 0 auto;
+}
+.logo{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
-    margin: 6px 18px;
-    position: relative;
+    margin: 14px 22px;
+    position: sticky;
 }
 
 .marquee-text {
@@ -61,8 +66,7 @@ a {
     position: absolute;
     white-space: nowrap;
     will-change: transform;
-    animation: marquee 15s linear infinite;
-    width: 180%;
+    animation: marquee 15s alternate infinite;
 }
 
 .track:hover {
@@ -83,14 +87,8 @@ span.text-red {
     margin-left: 6px;
 }
 
-.logo {
-    color: gray;
-    font-size: 18px;
-
-}
-
 .cart-icon {
-    font-size: 25px;
+    font-size: 28px;
     color: gray;
     cursor: pointer;
     position: relative;
@@ -196,12 +194,11 @@ span.text-red {
 
 .hero-banner-image {
     position: absolute;
-    top: 0%;
+    top: 0;
     right: 20%;
     width: 450px;
     height: 450px;
 }
-
 
 .desc {
     position: absolute;
@@ -251,7 +248,6 @@ span.text-red {
     background-color: #f02d34;
     border-radius: 15px;
     position: relative;
-    height: 400px;
     line-height: 1;
     color: white;
     width: 100%;
@@ -484,7 +480,6 @@ span.text-red {
     display: flex;
     gap: 40px;
     color: #324d67;
-
 }
 
 
@@ -720,7 +715,6 @@ span.text-red {
         flex-direction: column;
         justify-content: center;
     }
-
 }
 
 @media screen and (max-width: 800px) {
@@ -730,7 +724,7 @@ span.text-red {
 
     .hero-banner-image {
         width: 55%;
-        height: 62%;
+        height: 50%;
         right: -5%;
     }
 
@@ -873,7 +867,7 @@ span.text-red {
     }
 
     .track {
-        animation: marquee 10s linear infinite;
+        animation: marquee 15s alternate infinite;
         width: 550%;
     }
 
