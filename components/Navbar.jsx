@@ -30,7 +30,7 @@ const Navbar = () => {
             <button
                 type='button'
                 className='cart-icon'
-                onClick={() => setShowCart(true)}
+                onClick={() => setShowCart(prev => !prev)}
             >
                 <AiOutlineShopping/>
                 <span className='cart-item-qty'>

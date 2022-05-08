@@ -49,13 +49,13 @@ a {
 
 .logo-img {
     position: absolute;
-    left: 5.3rem;
+    left: 5.1rem;
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
-    margin: 14px 22px;
+    margin: 14px 18px;
 }
 
 .marquee-text {
