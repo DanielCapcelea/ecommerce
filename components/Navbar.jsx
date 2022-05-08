@@ -12,13 +12,21 @@ const Navbar = () => {
     return (
         <div className='navbar-container'>
             <Link href='/'>
-                <Image
-                    src={Logo}
-                    alt="logo"
-                    width={45}
-                    height={45}
-                />
+                <div className='logo'>
+                    <div className='logo-img'>
+                        <Image
+                            src={Logo}
+                            alt="logo"
+                            width={55}
+                            height={55}
+                        />
+                    </div>
+                    <p className='logo-text'>
+                        Dream Like Me
+                    </p>
+                </div>
             </Link>
+
             <button
                 type='button'
                 className='cart-icon'
