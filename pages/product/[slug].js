@@ -18,13 +18,11 @@ const ProductDetails = ({product, products}) => {
     return (
         <div>
             <div className='product-detail-container'>
-                <div>
-                    <div className='image-container'>
-                        <img
-                            src={urlFor(image && image[index])}
-                            className='product-detail-image'
-                        />
-                    </div>
+                <div className='center'>
+                    <img
+                        src={urlFor(image && image[index])}
+                        className='product-detail-image'
+                    />
                     <div className='small-images-container'>
                         {image?.map((item, i) => (
                             <img
@@ -60,21 +58,23 @@ const ProductDetails = ({product, products}) => {
                             <span onClick={incQty} className='plus'><AiOutlinePlus/></span>
                         </p>
                     </div>
-                    <div className='buttons'>
-                        <button
-                            type='button'
-                            className='add-to-cart'
-                            onClick={() => onAdd(product, qty)}
-                        >
-                            Add to Cart
-                        </button>
-                        <button
-                            type='button'
-                            className='buy-now'
-                            onClick={handleBuyNow}
-                        >
-                            Buy Now
-                        </button>
+                    <div className='center'>
+                        <div className='buttons'>
+                            <button
+                                type='button'
+                                className='add-to-cart'
+                                onClick={() => onAdd(product, qty)}
+                            >
+                                Add to Cart
+                            </button>
+                            <button
+                                type='button'
+                                className='buy-now'
+                                onClick={handleBuyNow}
+                            >
+                                Buy Now
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
