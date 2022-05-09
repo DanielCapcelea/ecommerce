@@ -17,7 +17,6 @@ export const StateContext = ({children}) => {
         }
     }, []);
 
-
     useEffect(() => {
         localStorage.setItem('totalQuantities', JSON.stringify(totalQuantities))
     }, [totalQuantities])

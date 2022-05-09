@@ -15,6 +15,7 @@ const ProductDetails = ({product, products}) => {
         setShowCart(true);
     }
 
+
     return (
         <>
             <div className='product-detail-container'>
@@ -26,7 +27,7 @@ const ProductDetails = ({product, products}) => {
                     <div className='small-images-container'>
                         {image?.map((item, i) => (
                             <img
-                                key={i}
+                                key={item._id}
                                 src={urlFor(item)}
                                 className={i === index ? 'small-image selected-image' : 'small-image'}
                                 onMouseEnter={() => setIndex(i)}
@@ -81,7 +82,10 @@ const ProductDetails = ({product, products}) => {
             <div className='maylike-products-wrapper'>
                 <h2>You may also like</h2>
                 <div className='marquee'>
-                    <div className='maylike-products-container track'>
+                    <div
+                        className='maylike-products-container track'
+                        onClick={() => setIndex(0)}
+                    >
                         {products.map((item) => (
                             <Product
                                 product={item}
