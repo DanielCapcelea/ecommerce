@@ -16,7 +16,7 @@ const ProductDetails = ({product, products}) => {
     }
 
     return (
-        <div>
+        <>
             <div className='product-detail-container'>
                 <div className='center'>
                     <img
@@ -91,7 +91,7 @@ const ProductDetails = ({product, products}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

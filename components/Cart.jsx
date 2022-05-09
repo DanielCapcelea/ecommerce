@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import Link from 'next/link';
-import {AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping} from 'react-icons/ai';
+import {AiOutlineMinus, AiOutlinePlus, AiOutlineRight, AiOutlineShopping} from 'react-icons/ai';
 import {TiDeleteOutline} from 'react-icons/ti';
 import toast from 'react-hot-toast';
 
@@ -52,11 +52,10 @@ const Cart = () => {
                     className="cart-heading"
                     onClick={() => setShowCart(prev => !prev)}
                 >
-                    <AiOutlineLeft/>
+                    <AiOutlineRight/>
                     <span className="heading">Your Cart</span>
                     <span className="cart-num-items">({totalQuantities} items)</span>
                 </button>
-
                 {cartItems.length < 1 && (
                     <div className="empty-cart">
                         <AiOutlineShopping size={150}/>
@@ -91,7 +90,7 @@ const Cart = () => {
                                  >
                                      <AiOutlineMinus/>
                                      </span>
-                                            <span className="num" onClick="">{item.quantity}</span>
+                                            <span className="num">{item.quantity}</span>
                                             <span
                                                 className="plus"
                                                 onClick={() => toggleCartItemQuantity(item._id, 'inc')}

@@ -13,17 +13,18 @@ const Navbar = () => {
         <div className='navbar-container'>
             <Link href='/'>
                 <div className='logo'>
+                    <p className='logo-text'>
+                        Dream Like Me
+                    </p>
                     <div className='logo-img'>
                         <Image
                             src={Logo}
                             alt="logo"
-                            width={55}
-                            height={55}
+                            width={57}
+                            height={57}
                         />
                     </div>
-                    <p className='logo-text'>
-                        Dream Like Me
-                    </p>
+
                 </div>
             </Link>
 
