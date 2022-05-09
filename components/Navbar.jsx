@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Link from 'next/link';
 import {AiOutlineShopping} from "react-icons/ai";
 import {Cart} from './';
@@ -24,7 +24,6 @@ const Navbar = () => {
                             height={57}
                         />
                     </div>
-
                 </div>
             </Link>
 

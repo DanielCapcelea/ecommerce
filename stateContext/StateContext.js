@@ -1,6 +1,5 @@
 import React, {createContext, useContext, useState, useEffect} from "react";
 import {toast} from "react-hot-toast";
-import product from "../sanity_backend/schemas/product";
 
 const Context = createContext();
 
@@ -10,6 +9,30 @@ export const StateContext = ({children}) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty, setQty] = useState(1);
+
+    useEffect(() => {
+        const cartQuantityLocalStorage = localStorage.getItem('totalQuantities');
+        if (cartQuantityLocalStorage !== null) {
+            setTotalQuantities(JSON.parse(cartQuantityLocalStorage))
+        }
+    }, []);
+
+
+    useEffect(() => {
+        localStorage.setItem('totalQuantities', JSON.stringify(totalQuantities))
+    }, [totalQuantities])
+
+
+    useEffect(() => {
+        const cartFromLocalStorage = localStorage.getItem('cartItems');
+        if (cartFromLocalStorage !== null) {
+            setCartItems(JSON.parse(cartFromLocalStorage));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    }, [cartItems]);
 
     let foundProduct;
     let index;
@@ -29,9 +52,7 @@ export const StateContext = ({children}) => {
                     }
             })
             setCartItems(updateCartItems);
-
         } else {
-
             product.quantity = quantity;
             setCartItems([...cartItems, {...product}]);
         }
@@ -48,14 +69,14 @@ export const StateContext = ({children}) => {
 
     }
 
-    const toggleCartItemQuantity =(id, value) => {
+    const toggleCartItemQuantity = (id, value) => {
         foundProduct = cartItems.find(item => item._id === id);
         index = cartItems.findIndex((product) => product._id === id);
 
-        if(value === 'inc') {
+        if (value === 'inc') {
             foundProduct.quantity += 1;
             const newCartItems = cartItems.map((item) => {
-                if(foundProduct._id === item._id) return foundProduct;
+                if (foundProduct._id === item._id) return foundProduct;
 
                 return item;
             });
@@ -63,10 +84,10 @@ export const StateContext = ({children}) => {
             setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price)
             setTotalQuantities(prevTotalQuantities => prevTotalQuantities + 1)
         } else if (value === 'dec') {
-            if(foundProduct.quantity > 1){
+            if (foundProduct.quantity > 1) {
                 foundProduct.quantity -= 1;
                 const newCartItems = cartItems.map((item) => {
-                    if(foundProduct._id === item._id) return foundProduct;
+                    if (foundProduct._id === item._id) return foundProduct;
 
                     return item;
                 })
