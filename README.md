@@ -1,6 +1,7 @@
 ## Ecommerce on NextJS
 
 ### Working payment method
+### Integration with Stripe
 
 ## You can check the payment with this card:
 
