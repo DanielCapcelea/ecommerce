@@ -1,4 +1,4 @@
-## Ecommerce on NextJS
+### Ecommerce on NextJS
 
 ## Working payment method
 
