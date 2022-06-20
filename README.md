@@ -1,6 +1,6 @@
-### Ecommerce on NextJS
+## Ecommerce on NextJS
 
-## Working payment method
+### Working payment method
 
 ## You can check the payment with this card:
 
